@@ -6,4 +6,4 @@ select
     -- cents to dolla
     ,amount / 100 as amount
     ,created
-from raw.stripe.payments
+from {{ source('stripe','payments') }}
