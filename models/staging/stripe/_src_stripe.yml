@@ -1,6 +1,21 @@
+version: 2
+
 sources:
   - name: stripe
     database: raw
     schema: stripe
     tables:
       - name: payments
+        columns:
+          - name: id
+            data_type: bigint
+          - name: orderid
+            data_type: bigint
+          - name: paymentmethod
+            data_type: string
+          - name: status
+            data_type: string
+          - name: amount
+            data_type: bigint
+          - name: created
+            data_type: date
