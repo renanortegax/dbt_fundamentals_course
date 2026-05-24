@@ -2,12 +2,15 @@ version: 2
 
 sources:
   - name: jaffle_shop
+    description: a clone do postgress db (example)
     database: raw
     schema: jaffle_shop
     tables:
       - name: customers
+        description: raw customer data (not transformed)
         columns:
           - name: id
+            description: PK table
             data_type: bigint
             data_tests:
               - unique

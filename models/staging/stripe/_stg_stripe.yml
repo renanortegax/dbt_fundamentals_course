@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_stripe__payments
+    description: one payment_id per row. The same order_id can have differents payment_id
+    columns:
+      - name: payment_id
+        data_type: bigint
+        description: ""
+
+      - name: order_id
+        data_type: bigint
+        description: ""
+
+      - name: payment_method
+        data_type: string
+        description: "{{ doc('payments_payment_method') }}"
+
+      - name: status
+        data_type: string
+        description: can be success or fail
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - success
+                  - fail 
+
+      - name: amount
+        data_type: double
+        description: ""
+
+      - name: created
+        data_type: date
+        description: ""
